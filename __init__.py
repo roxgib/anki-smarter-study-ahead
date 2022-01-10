@@ -25,7 +25,7 @@ def create_filtered_deck(deck_id) -> int:
     ids = [k[0] for k in sorted(id_dues, key = lambda x: x[1])]
 
     filter_string =  '"deck:' + str(deck_id) + '" ('
-    filter_string += ' OR '.join([f"(prop:due<={i} prop:ivl>={i*max_multiple})" for i in range(1, num_days+1)])
+    filter_string += ' OR '.join([f'cid:{id}' for id in ids[:num_cards]])
     filter_string += ') -is:learn'
 
     f_deck_id = mw.col.decks.new_filtered('Study Ahead::' + deck_name)
