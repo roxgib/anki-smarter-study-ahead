@@ -1,1 +1,5 @@
-{"num_days": 5, "num_cards": 100, "max_multiple": 10}
+{
+    "max_days_ahead": 5, 
+    "max_cards": 100, 
+    "max_multiple": 10
+}

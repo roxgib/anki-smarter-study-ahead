@@ -1,0 +1,7 @@
+You can change these setting to affect the limits that are placed on what cards to choose:
+
+"max_days_ahead": card will only be chosen for study ahead if they are due for review within this amount of days. Default is 7 days. 
+
+"max_cards": this is the maximum number of cards that will be chosen for each filtered deck. Once you've studied them, creating a new filtered deck may find new cards to study ahead. Set this to a high number if you just want all the eligible cards to appear the first time around.
+
+"max_multiple": This is the maximum ratio between how far ahead a card is and its interval. The default is 10. This means if a card is due tomorrow, it must have an interval of at least 10 days to be eligible to be studied ahead. If it's due in 2 days, it must have an interval of at least 20 days, and so on. Changing the number of 5 would mean that tomorrow's cards would be chosen if they have an interval of at least 5, cards due in 2 days must have an interval of at least 10 days, and so on. Don't set this value too low - the point of this add-on is to choose the cards for which studying ahead will have the least impact. For mature decks, most cards should be eligible with this settings left on its default value of 10, so you probably don't need to change this setting.
