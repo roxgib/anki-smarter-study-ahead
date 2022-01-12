@@ -2,7 +2,6 @@
 Todo:
     - Pick best for study ahead all decks
     - Better handling of child decks
-    - Rebuilds
 """
 
 from aqt import mw
@@ -16,6 +15,7 @@ def create_filtered_deck(deck_id, tt = True) -> int:
     max_multiple = config['max_multiple']
 
     deck = mw.col.decks.get(deck_id)
+
     deck_name = deck['name']
     timeToday = deck['timeToday'][0]
 
@@ -52,6 +52,20 @@ def create_filtered_deck(deck_id, tt = True) -> int:
     
     return f_deck_id
 
+def on_reload_all() -> None:
+    decklist = [mw.col.decks.id_for_name(deck.name[13:]) for deck in mw.col.decks.all_names_and_ids() if deck.name[:13] == 'Study Ahead::']
+    count = len([id for id in [create_filtered_deck(id, tt=False) for id in decklist] if id != None])
+    tooltip(f"Reloaded {count} deck{'' if count == 1 else 's'} for study ahead.")
+
+def on_study_ahead_all() -> None:
+    decklist = [deck.id for deck in mw.col.decks.all_names_and_ids() if '::' not in deck.name and not mw.col.decks.is_filtered(deck.id) and deck.name != 'Study Ahead']
+    count = len([id for id in [create_filtered_deck(id, tt=False) for id in decklist] if id != None])
+    tooltip(f"Created {count} deck{'' if count == 1 else 's'} for study ahead.")
+
+study_ahead_all = QAction(f"Study Ahead All Decks", mw)
+qconnect(study_ahead_all.triggered, on_study_ahead_all)
+mw.form.menuTools.addAction(study_ahead_all)
+
 def on_show_options(menu, deck_id) -> None:
     if (deck := mw.col.decks.get(deck_id))['name'][:11] != 'Study Ahead' and not mw.col.decks.is_filtered(deck_id):
         action = menu.addAction("Study Ahead")
@@ -65,20 +79,6 @@ def on_show_options(menu, deck_id) -> None:
         action.triggered.connect(lambda _, did=home_deck_id: create_filtered_deck(did))
 
 gui_hooks.deck_browser_will_show_options_menu.append(on_show_options)
-
-def on_study_ahead_all() -> None:
-    decklist = [deck.id for deck in mw.col.decks.all_names_and_ids() if '::' not in deck.name and not mw.col.decks.is_filtered(deck.id) and deck.name != 'Study Ahead']
-    count = len([id for id in [create_filtered_deck(id, tt=False) for id in decklist] if id != None])
-    tooltip(f"Created {count} deck{'' if count == 1 else 's'} for study ahead.")
-
-study_ahead_all = QAction(f"Study Ahead All Decks", mw)
-qconnect(study_ahead_all.triggered, on_study_ahead_all)
-mw.form.menuTools.addAction(study_ahead_all)
-
-def on_reload_all() -> None:
-    decklist = [mw.col.decks.id_for_name(deck.name[13:]) for deck in mw.col.decks.all_names_and_ids() if deck.name[:13] == 'Study Ahead::']
-    count = len([id for id in [create_filtered_deck(id, tt=False) for id in decklist] if id != None])
-    tooltip(f"Reloaded {count} deck{'' if count == 1 else 's'} for study ahead.")
 
 if __name__ == "__main__":
     print("This is an add-on for Anki. It is not intended to be run outside of Anki.")
