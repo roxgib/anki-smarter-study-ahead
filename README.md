@@ -7,7 +7,7 @@ Studying ahead (i.e. studying cards today that should be due tomorrow or over th
 Smarter Study Ahead creates filtered decks by selecting the most optimal cards for studying ahead. It does this by selecting the cards for which studying them today would reduce the interval by the smallest percentage amount. For example, if a card due tomorrow has an interval of 20 days, studying it today would reduce the interval by 5% (i.e. by 1 day out of 20). If another card due in 2 days has an interval of 100 days, studying it today would reduce the interval by 2% (i.e. by 2 days out of 100). If you have time today to only study one extra card, the second card is the better choice, even though it's due two days from now, because the effect on its interval is much smaller.
 
 ## Usage
-To use this addon, simply click the cog next to a deck and select 'Study Ahead'. A filtered deck will be created containing the most optimal cards for studying ahead.  
+To use this add-on, simply click the cog next to a deck and select 'Study Ahead'. A filtered deck will be created containing the most optimal cards for studying ahead.  
 
 By default only the most optimal 100 cards will be chosen - to study ahead further, simply click 'Study Ahead' again to fill the deck with the next set of cards. 
 
@@ -20,10 +20,10 @@ You can change the following settings in the add-on config to affect the limits 
 
 "max_cards": this is the maximum number of cards that will be chosen for each filtered deck. Once you've studied them, creating a new filtered deck may find new cards to study ahead. Set this to a high number if you just want all the eligible cards to appear the first time around.
 
-"max_multiple": This is the maximum ratio between how far ahead a card is and its interval. The default is 10. This means if a card is due tomorrow, it must have an interval of at least 10 days to be eligible to be studied ahead. If it's due in 2 days, it must have an interval of at least 20 days, and so on. Changing the number of 5 would mean that tomorrow's cards would be chosen if they have an interval of at least 5, cards due in 2 days must have an interval of at least 10 days, and so on. Don't set this value too low - the point of this add-on is to choose the cards for which studying ahead will have the least impact. For mature decks, most cards should be eligible with this settings left on its default value of 10, so you probably don't need to change this setting.
+"max_multiple": This is the maximum ratio between how far ahead a card is and its interval. The default is 10. This means if a card is due tomorrow, it must have an interval of at least 10 days to be eligible to be studied ahead. If it's due in 2 days, it must have an interval of at least 20 days, and so on. Changing the number to 5 would mean that tomorrow's cards would be chosen if they have an interval of at least 5 days, cards due in 2 days must have an interval of at least 10 days, and so on. Don't set this value too low - the point of this add-on is to choose the cards for which studying ahead will have the least impact. For mature decks, most cards should be eligible with this settings left on its default value of 10, so you probably don't need to change this setting.
 
 ## Bugs, problems, feature requests
-Please posts these to the GitHub issue tracker - don't leave them in a review on the Anki site or a Reddit comment etc because I might not see it.
+Please posts these to the <a href=https://github.com/roxgib/anki-smarter-study-ahead/issues>GitHub issue tracker</a> - don't leave them in a review on the Anki site or a Reddit comment etc because I might not see it.
 
 ## FAQ
 **Does this mess with the scheduling algorythm?** 
@@ -34,6 +34,6 @@ See <a href=https://docs.ankiweb.net/filtered-decks.html#reviewing-ahead>this pa
 
 > If the cards were almost due to be shown, they will be given a new delay similar to what they would have received if you had reviewed them on time.
 
-**The Anki Manual warns against the repeated use of the review ahead feature. Does this apply to this addon as well?**
-No. This addon is designed to addess the limitations of the builtin 'review ahead' feature so you can use it every day if you want.
+**The Anki Manual warns against the repeated use of the review ahead feature. Does this apply to this add-on as well?**
+No. Smarter Study Ahead is designed to addess the limitations of the built-in 'review ahead' feature so you can use it every day if you want.
 
