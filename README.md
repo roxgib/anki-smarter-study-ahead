@@ -11,10 +11,12 @@ To use this addon, simply click the cog next to a deck and select 'Study Ahead'.
 
 By default only the most optimal 100 cards will be chosen - to study ahead further, simply click 'Study Ahead' again to fill the deck with the next set of cards. 
 
+Once you're finished you can simply delete the filtered deck. Make sure to do so before you start your regular reviews the next day.
+
 ## Settings
 You can change the following settings in the add-on config to affect the limits that are placed on what cards to choose:
 
-"max_days_ahead": card will only be chosen for study ahead if they are due for review within this amount of days. Default is 7 days. 
+"max_days_ahead": card will only be chosen for study ahead if they are due for review within this amount of days. Default is 7 days.
 
 "max_cards": this is the maximum number of cards that will be chosen for each filtered deck. Once you've studied them, creating a new filtered deck may find new cards to study ahead. Set this to a high number if you just want all the eligible cards to appear the first time around.
 
@@ -24,10 +26,14 @@ You can change the following settings in the add-on config to affect the limits 
 Please posts these to the GitHub issue tracker - don't leave them in a review on the Anki site or a Reddit comment etc because I might not see it.
 
 ## FAQ
-**Does this mess with the scheduling algorythm?** - Not directly - all it does is create filtered decks, and uses Anki's built-in system for determining the interval of early reviews, so it's not messing with Anki's underlying scheduling algorythm.
+**Does this mess with the scheduling algorythm?** 
+Not directly - all it does is create filtered decks, and uses Anki's built-in system for determining the interval of early reviews, so it's not messing with Anki's underlying scheduling algorythm.
 
-**How will this affect the new intervals of the studied cards?** - See <a href=https://docs.ankiweb.net/filtered-decks.html#reviewing-ahead>this page</a> from the Anki Manual, but the short answer is 'not much' since the intervals are only changing by a maximum of 10% on the default settings, and usually by much less than this. From the manual:
+**How will this affect the new intervals of the studied cards?** 
+See <a href=https://docs.ankiweb.net/filtered-decks.html#reviewing-ahead>this page</a> from the Anki Manual, but the short answer is 'not much' since the intervals are only changing by a maximum of 10% on the default settings, and usually by much less than this. From the manual:
 
 > If the cards were almost due to be shown, they will be given a new delay similar to what they would have received if you had reviewed them on time.
 
-**The Anki Manual warns against the repeated use of the review ahead feature. Does this apply to this addon as well?** - No. This addon is designed to addess the limitations of the builtin 'review ahead' feature so you can use it every day if you want.
+**The Anki Manual warns against the repeated use of the review ahead feature. Does this apply to this addon as well?**
+No. This addon is designed to addess the limitations of the builtin 'review ahead' feature so you can use it every day if you want.
+
