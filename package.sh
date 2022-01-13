@@ -1,0 +1,1 @@
+zip -r -X smarter-study-ahead.ankiaddon ./__init__.py ./manifest.json ./config.json ./config.md ./LICENSE
