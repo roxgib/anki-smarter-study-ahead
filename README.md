@@ -1,5 +1,5 @@
 # Smarter Study Ahead
-An add-on for Anki that generates filtered decks for studying ahead
+An add-on for Anki that generates filtered decks for studying ahead.
 
 ## Introduction
 Studying ahead (i.e. studying cards today that should be due tomorrow or over the next few days) is a useful tool for any serious Anki user, allowing you to balance your study load, make use of extra time or energy you happen to have, or just give yourself a day off without the reviews stacking up. Unfortunately, studying ahead is suboptimal because some cards will have intervals that are too short, and studying them early can significantly change the interval. This add-on tries to address that problem.
@@ -26,8 +26,8 @@ You can change the following settings in the add-on config to affect the limits 
 Please posts these to the <a href=https://github.com/roxgib/anki-smarter-study-ahead/issues>GitHub issue tracker</a> - don't leave them in a review on the Anki site or a Reddit comment etc because I might not see it.
 
 ## FAQ
-**Does this mess with the scheduling algorythm?** 
-Not directly - all it does is create filtered decks, and uses Anki's built-in system for determining the interval of early reviews, so it's not messing with Anki's underlying scheduling algorythm.
+**Does this mess with the scheduling algorithm?** 
+Not directly - all it does is create filtered decks, and uses Anki's built-in system for determining the interval of early reviews, so it's not messing with Anki's underlying scheduling algorithm.
 
 **How will this affect the new intervals of the studied cards?** 
 See <a href=https://docs.ankiweb.net/filtered-decks.html#reviewing-ahead>this page</a> from the Anki Manual, but the short answer is 'not much' since the intervals are only changing by a maximum of 10% on the default settings, and usually by much less than this. From the manual:
