@@ -7,11 +7,13 @@ Studying ahead (i.e. studying cards today that should be due tomorrow or over th
 Smarter Study Ahead creates filtered decks by selecting the most optimal cards for studying ahead. It does this by selecting the cards for which studying them today would reduce the interval by the smallest percentage amount. For example, if a card due tomorrow has an interval of 20 days, studying it today would reduce the interval by 5% (i.e. by 1 day out of 20). If another card due in 2 days has an interval of 100 days, studying it today would reduce the interval by 2% (i.e. by 2 days out of 100). If you have time today to only study one extra card, the second card is the better choice, even though it's due two days from now, because the effect on its interval is much smaller.
 
 ## Usage
-To use this add-on, simply click the cog next to a deck and select 'Study Ahead'. A filtered deck will be created containing the most optimal cards for studying ahead.  
+To use this add-on, simply click the cog next to a deck and select 'Study Ahead'. A filtered deck will be created containing the most optimal cards for studying ahead.
 
-By default only the most optimal 100 cards will be chosen - to study ahead further, simply click 'Study Ahead' again to fill the deck with the next set of cards. 
+By default only the most optimal 100 cards will be chosen - to study ahead further, simply click 'Study Ahead' again to fill the deck with the next set of cards or select 'Reload' from the deck options menu.
 
 Once you're finished you can simply delete the filtered deck. Make sure to do so before you start your regular reviews the next day.
+
+To generate study ahead decks for the whole collection, select 'Study Ahead All Decks' from the tools menu.
 
 ## Settings
 You can change the following settings in the add-on config to affect the limits that are placed on what cards to choose:
