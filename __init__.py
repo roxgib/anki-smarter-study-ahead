@@ -1,5 +1,7 @@
 """
 Todo:
+    - Group filtered deck creation as one undo step
+    - Order cards by dueness
     - Pick best for study ahead all decks
     - Better handling of child decks
 """
