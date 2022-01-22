@@ -10,7 +10,9 @@ from aqt.utils import tooltip, showInfo
 def underdue_ratio(card_id: int, mw=mw) -> float:
     card = mw.col.get_card(card_id)
     timeToday = mw.col.decks.get(card.did)['timeToday'][0]
-    return card.ivl / (card.due - timeToday)
+    due = card.due if card.due > 0 else card.odue
+    if due == timeToday: return 0
+    return card.ivl / (due - timeToday)
 
 def sort_cards():
     ids = mw.col.find_cards('deck:"Study Ahead" deck:filtered')
