@@ -56,7 +56,7 @@ def find_eligible_cards(deck_ids: list[int], min_multiple: float = None) -> list
     deck_string = ' OR '.join([f'deck:"{deck_name}"' for deck_name in deck_names])
 
     ids = mw.col.find_cards(f'({deck_string}) prop:due<={max_days_ahead} -is:due -is:learn -is:suspended -is:buried')
-    ids = [id for id in sorted(ids, key = lambda card_id: underdue_ratio(card_id, mw), reverse=True) if (underdue_ratio(id) > min_multiple)]
+    ids = [id for id in sorted(ids, key = lambda card_id: underdue_ratio(card_id, mw), reverse=True) if (underdue_ratio(id) >= min_multiple)]
     ids = [id for id in ids if mw.col.get_card(id).queue == 2][:max_cards]
 
     return ids
