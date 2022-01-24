@@ -100,6 +100,8 @@ def study_ahead(deck_ids: list[int]) -> int:
 
         deck_count += 1
 
+        mw.col.merge_undo_entries(_undo_entry)
+
     if tt: tooltip(f"Created filtered deck 'Study Ahead::{deck_name}' with {len(ids)} card{'' if (len(ids) == 1) else 's'}.")
 
     sort_cards()
